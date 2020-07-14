@@ -3,34 +3,16 @@ import "./Quiz.css";
 import "../../components/ActiveQuiz/ActiveQuiz";
 import ActiveQuiz from "../../components/ActiveQuiz/ActiveQuiz";
 import FinishedQuiz from "../../components/FinishedQuiz/FinishedQuiz";
-
+import axios from "../../axios/axios-quiz"
+import Spinner from "../../components/UI/Spinner/Spinner"
 class Quiz extends Component {
   state = {
+    results: {},
     isFinished: false,
     activeQustion: 0,
     answerState: null, // {[id]: 'sucess' or 'error'}
-    quiz: [
-      {
-        question: "4+5 = ",
-        rightAnswerId: 4,
-        answers: [
-          { text: "3", id: 1 },
-          { text: "5", id: 2 },
-          { text: "7", id: 3 },
-          { text: "-9", id: 4 },
-        ],
-      },
-      {
-        question: "/*3*/3 != ",
-        rightAnswerId: 4,
-        answers: [
-          { text: "false", id: 1 },
-          { text: "3", id: 2 },
-          { text: "null", id: 3 },
-          { text: "3!=", id: 4 },
-        ],
-      },
-    ],
+    quiz:[],
+    loadig: true,
   };
   isQuizfinished() {
     return this.state.quiz.length === this.state.activeQustion + 1;
@@ -44,7 +26,12 @@ class Quiz extends Component {
       }
     }
     const question = this.state.quiz[this.state.activeQustion];
+    const results = this.state.results;
+
     if (question.rightAnswerId === AnswerId) {
+      if (!results[AnswerId]) {
+        results[AnswerId] = "sucess";
+      }
       this.setState({
         answerState: { [AnswerId]: "sucess" },
       });
@@ -62,21 +49,40 @@ class Quiz extends Component {
           answerState: null,
         });
         clearTimeout(timeout);
-      }, 1000);
+      }, 750);
     } else {
+      results[question.id] = "error";
       console.log("erorr");
       this.setState({
+        results,
         answerState: { [AnswerId]: "erorr" },
       });
     }
   };
+  async componentDidMount(){
+    try{
+      const response = await axios.get(`quiz/${this.props.match.params.id}.json`)
+      const quiz = response.data;
+      this.setState({
+        quiz,
+        loadig:false,
+      })
+    }catch(e){
+      console.log(e)
+    }
+  }
   render() {
     return (
-      <div className={"Quiz"}>
+      this.state.loadig
+        ?<Spinner/>
+        :<div className={"Quiz"}>
         <div className={"Quiz-wrapper"}>
           <h1>Quiz</h1>
           {this.state.isFinished ? (
-            <FinishedQuiz></FinishedQuiz>
+            <FinishedQuiz
+              results={this.state.results}
+              quiz={this.state.quiz}
+            ></FinishedQuiz>
           ) : (
             <ActiveQuiz
               question={this.state.quiz[this.state.activeQustion].question}
@@ -89,6 +95,7 @@ class Quiz extends Component {
           )}
         </div>
       </div>
+      
     );
   }
 }

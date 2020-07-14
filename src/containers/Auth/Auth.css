@@ -1,0 +1,35 @@
+.Auth {
+  display: flex;
+  flex-grow: 1;
+  justify-content: center;
+  flex-direction: column;
+  padding: 200px;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(40, 117, 84),
+    rgb(48, 115, 101),
+    rgb(57, 112, 118),
+    rgb(65, 110, 134),
+    rgb(74, 107, 151),
+    rgb(82, 105, 168),
+    rgb(84, 118, 170),
+    rgb(86, 131, 171),
+    rgb(88, 145, 173),
+    rgb(90, 158, 175),
+    rgb(92, 171, 176),
+    rgb(94, 184, 178)
+  );
+}
+.Auth div{
+    padding:0px 300px;
+}
+.Auth h1{
+    font-size: 32px;
+    font-weight: 600px;
+    color: whitesmoke;
+    margin-bottom: 20px;
+}
+.Auth .btn{
+    margin-right:10px;
+    margin-bottom: 10px;
+}

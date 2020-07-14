@@ -1,3 +1,16 @@
-.FinishedQuiz{
-
+.FinishedQuiz {
+  border: 2px solid whitesmoke;
+  color: whitesmoke;
+  padding: 10px 10px;
+  border-radius: 5px;
+  box-sizing: border-box;
+  margin: 0 10;
+}
+.FinishedQuiz ul{
+    list-style: none;
+    padding: 0px;
+    margin: 0px;
+}
+.FinishedQuiz ul li{
+margin-left: 10px;
 }

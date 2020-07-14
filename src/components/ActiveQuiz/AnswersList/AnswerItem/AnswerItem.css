@@ -1,18 +1,19 @@
 .AnswerItem{
-   padding: 10,15px; 
-   border: 1px solid whitesmoke;
-   border-radius: 3px;
+   padding: 5px 5px; 
+   border: 2px solid whitesmoke;
+   border-radius: 6px;
    margin-bottom: 8px;
    cursor: pointer;
+   transition: background-color 0.4s linear;
    
 }
 .AnswerItem:hover{
-    background: rgba(255, 245, 255, .2);
-    transition: cubic-bezier(0.6, -0.28, 0.735, 0.045);
+    background: rgba(255, 245, 255, .3);
+    box-shadow:  1px 1px 1px 1px  whitesmoke;
 }
 .AnswerItem.sucess{
-background-color: greenyellow;
+background-color: rgb(77, 255, 77);
 }
 .AnswerItem.erorr{
-  background-color: red;
+  background-color: rgb(255, 102, 102);
 }

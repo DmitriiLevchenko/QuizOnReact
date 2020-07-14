@@ -1,0 +1,30 @@
+.Quizcreate {
+  display: flex;
+  flex-grow: 1;
+  padding-top: 100px;
+  justify-content: center;
+  background-image: linear-gradient(
+    to bottom right,
+    rgb(40, 117, 84),
+    rgb(48, 115, 101),
+    rgb(57, 112, 118),
+    rgb(65, 110, 134),
+    rgb(74, 107, 151),
+    rgb(82, 105, 168),
+    rgb(84, 118, 170),
+    rgb(86, 131, 171),
+    rgb(88, 145, 173),
+    rgb(90, 158, 175),
+    rgb(92, 171, 176),
+    rgb(94, 184, 178)
+  );
+}
+.Quizcreate h1{
+  font-size: 32px;
+  font-weight: 600;
+  color: whitesmoke;
+  margin-bottom: 20px;
+}
+.Quizcreate button{
+  margin:5px 10px;
+}

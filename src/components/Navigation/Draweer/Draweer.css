@@ -1,0 +1,44 @@
+.Draweer {
+  position: fixed;
+  left: 0;
+  top: 0;
+  bottom: 0;
+  width: 80%;
+  max-width: 300px;
+  padding: 20px 10px;
+  box-sizing: border-box;
+  color: #363f54;
+  background-color: whitesmoke;
+  transform: translateX(0px);
+  transition: transform .22s ease-in;
+  opacity:0.9;
+  z-index: 90;
+}
+.Draweer.close {
+  transform: translateX(-300px);
+}
+.Draweer h2{
+  font-size: 24px;
+  font-weight: bold;
+  color: #363f54;
+}
+.Draweer ul {
+  list-style: none;
+  margin: 0px;
+  padding: 0px;
+}
+.Draweer ul li {
+  margin-bottom: 22px;
+}
+.Draweer ul li a {
+  color: #363f54;
+  font-size: 24px;
+  text-decoration: none;
+  background-color: whitesmoke;
+  position: relative;
+  padding: 0 20px;
+  transition: opacity 0.3s;
+}
+.Draweer ul li a:hover, .active{
+ opacity: .7
+}

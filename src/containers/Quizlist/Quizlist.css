@@ -1,0 +1,47 @@
+.Quizlist {
+  display: flex;
+  flex-grow: 1;
+  flex-direction: column;
+  align-items: center;
+  padding: 100px;
+  border: solid 1px rgb(245, 237, 237);
+  background-image: linear-gradient(
+    to top left,
+    rgb(58, 181, 152),
+    rgb(63, 166, 155),
+    rgb(68, 151, 158),
+    rgb(72, 135, 162),
+    rgb(77, 120, 165),
+    rgb(82, 105, 168),
+    rgb(84, 118, 170),
+    rgb(86, 131, 171),
+    rgb(88, 145, 173),
+    rgb(90, 158, 175),
+    rgb(92, 171, 176),
+    rgb(94, 184, 178)
+  );
+}
+.Quizlist h1 {
+  margin-bottom: 20px;
+  font-size: 37px;
+  font-weight: 700;
+  color: whitesmoke;
+  font-family: Georgia, "Times New Roman", Times, serif;
+  font-stretch: expanded;
+}
+.Quizlist li {
+  padding: 0;
+  margin: 0;
+  list-style-type: none;
+  margin-bottom: 10px;
+}
+.Quizlist li a {
+  text-decoration: none;
+  color: whitesmoke;
+  font-size: 18px;
+  animation-duration: 900ms;
+}
+.Quizlist li a:hover {
+  color: #b3ffb3;
+  font-size: 19px;
+}

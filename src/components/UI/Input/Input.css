@@ -1,0 +1,17 @@
+.input {
+  margin:3px 0px;
+}
+.label {
+  margin:3px 0px;
+  color: whitesmoke;
+  font-size: 14px;
+}
+.invalid.label{
+ color:red;
+}
+p{
+  margin:5px 0px;
+  color: red;
+  font-size: 12px;
+  font-weight: bold;
+}

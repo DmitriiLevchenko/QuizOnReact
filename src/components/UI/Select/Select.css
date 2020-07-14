@@ -1,0 +1,12 @@
+.Select{
+    margin:5px 5px;
+}
+.Select label{
+    color:white;
+    font-size: 14px;
+    font-weight: bold;
+}
+.Select select{
+    width: 100%;
+    margin:5px 0px;
+}
